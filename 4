@@ -1,13 +1,9 @@
 a
 import pandas as pd
 import matplotlib.pyplot as plt
-
 data=pd.read_csv('./ToyotaCorolla.csv')
-
 plt.boxplot([data["Price"],data["HP"],data["KM"]])
-
 plt.xticks([1,2,3],["Price","HP","KM"])
-
 plt.show()
 
 b
@@ -38,9 +34,7 @@ def alphabeta_minimax(depth, nodeIndex, maximizingPlayer, values, alpha, beta):
 
 			if beta <= alpha:
 				break
-
 		return best
-
 
 values = [3, 5, 6, 9, 1, 2, 0, -1]
 print("The optimal value is :", alphabeta_minimax(0, 0, True, values, MIN, MAX))
