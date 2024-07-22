@@ -17,23 +17,22 @@ plt.show()
 
 b
 def h(n):
-    H = {'A': 3, 'B': 4, 'C': 2, 'D': 6, 'G': 0, 'S': 5}
+    H = {'A': 11, 'B': 6, 'C': 99, 'E': 7, 'D': 1, 'G': 0}
     return H[n]
 
 def a_star_algorithm(graph, start, goal):
-
     open_list = [start]
     closed_list = set()
-    g = {start:0}
-    parents = {start:start}
+    g = {start: 0}
+    parents = {start: start}
 
     while open_list:
-
         open_list.sort(key=lambda v: g[v] + h(v), reverse=True)
         n = open_list.pop()
 
         if n == goal:
             reconst_path = []
+            total_cost = g[n]
             while parents[n] != n:
                 reconst_path.append(n)
                 n = parents[n]
@@ -41,7 +40,8 @@ def a_star_algorithm(graph, start, goal):
             reconst_path.reverse()
 
             print(f'Path found: {reconst_path}')
-            return reconst_path
+            print(f'Total cost: {total_cost}')
+            return reconst_path, total_cost
 
         for (m, weight) in graph[n]:
             if m not in open_list and m not in closed_list:
@@ -61,13 +61,15 @@ def a_star_algorithm(graph, start, goal):
         closed_list.add(n)
 
     print('Path does not exist!')
-    return None
+    return None, None
 
 graph = {
-    'S': [('A', 1), ('G', 10)],
-    'A': [('B', 2), ('C', 1)],
-    'B': [('D', 5)],
-    'C': [('D', 3),('G', 4)],
-    'D': [('G', 2)]
+    
+    'A': [('B', 2), ('E', 3)],
+    'B': [('C', 1),('G',9)],
+    'E': [('D', 6)],
+    'D': [('G', 1)], 
+    'C': [],
+    'G': []
 }
-a_star_algorithm(graph, 'S', 'G')
+path, cost = a_star_algorithm(graph, 'A', 'G')
