@@ -42,10 +42,35 @@ print(perceptron_and.predict(X_and))
 print("\nOR Function Predictions:")
 print(perceptron_or.predict(X_or))
 
+and_test_input = np.array([[0, 0]])
+print("\nAND Function Prediction for input [0, 0]:")
+print(perceptron_and.predict(and_test_input))
+
+and_test_input = np.array([[0, 1]])
+print("\nAND Function Prediction for input [0, 1]:")
+print(perceptron_and.predict(and_test_input))
+
+and_test_input = np.array([[1, 0]])
+print("\nAND Function Prediction for input [1, 0]:")
+print(perceptron_and.predict(and_test_input))
+
 and_test_input = np.array([[1, 1]])
 print("\nAND Function Prediction for input [1, 1]:")
 print(perceptron_and.predict(and_test_input))
 
+
+or_test_input = np.array([[0, 0]])
+print("\nOR Function Prediction for input [0, 0]:")
+print(perceptron_or.predict(or_test_input))
+
 or_test_input = np.array([[0, 1]])
 print("\nOR Function Prediction for input [0, 1]:")
+print(perceptron_or.predict(or_test_input))
+
+or_test_input = np.array([[1, 0]])
+print("\nOR Function Prediction for input [1, 0]:")
+print(perceptron_or.predict(or_test_input))
+
+or_test_input = np.array([[1, 1]])
+print("\nOR Function Prediction for input [1, 1]:")
 print(perceptron_or.predict(or_test_input))
