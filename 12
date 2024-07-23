@@ -60,11 +60,36 @@ print(mlp_and_not.predict(X_and_not))
 print("\nXOR Function Predictions:")
 print(mlp_xor.predict(X_xor))
 
-and_not_test_input = np.array([[0, 1]])
-xor_test_input = np.array([[1, 0]])
 
+and_not_test_input = np.array([[0, 0]])
+print("\nAND-NOT Function Prediction for input [0, 0]:")
+print(mlp_and_not.predict(and_not_test_input))
+
+and_not_test_input = np.array([[0, 1]])
 print("\nAND-NOT Function Prediction for input [0, 1]:")
 print(mlp_and_not.predict(and_not_test_input))
 
+and_not_test_input = np.array([[1, 0]])
+print("\nAND-NOT Function Prediction for input [1, 0]:")
+print(mlp_and_not.predict(and_not_test_input))
+
+and_not_test_input = np.array([[1, 1]])
+print("\nAND-NOT Function Prediction for input [1, 1]:")
+print(mlp_and_not.predict(and_not_test_input))
+
+
+xor_test_input = np.array([[0, 0]])
+print("\nXOR Function Prediction for input [0, 0]:")
+print(mlp_xor.predict(xor_test_input))
+
+xor_test_input = np.array([[0, 1]])
+print("\nXOR Function Prediction for input [0, 1]:")
+print(mlp_xor.predict(xor_test_input))
+
+xor_test_input = np.array([[1, 0]])
 print("\nXOR Function Prediction for input [1, 0]:")
+print(mlp_xor.predict(xor_test_input))
+
+xor_test_input = np.array([[1, 1]])
+print("\nXOR Function Prediction for input [1, 1]:")
 print(mlp_xor.predict(xor_test_input))
